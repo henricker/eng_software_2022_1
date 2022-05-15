@@ -99,7 +99,8 @@ class UserController {
         name: body.name || database.users[userIndex].name,
         updated_at: new Date(),
         created_at: database.users[userIndex].created_at,
-        id: database.users[userIndex].id
+        id: database.users[userIndex].id,
+        password: database.users[userIndex].password
       }
 
       await fs.writeFile('./database.json', JSON.stringify(database, null, 2));
